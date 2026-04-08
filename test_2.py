@@ -1,5 +1,7 @@
 import unittest
 import time
+
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -25,6 +27,8 @@ class Tests(unittest.TestCase):
                 # с помощью assertEqual проверяем, что ожидаемый текст в переменной совпадает с текстом на странице сайта
         self.assertEqual(text,"Congratulations! You have successfully registered!", "Текст на странице не совпадает с ожидаемым")
         print("test1 successful")
+    # @pytest.mark.smoke - маркировка теста smoke
+    @pytest.mark.smoke
     def test_find_el2(self):
         self.driver.get("http://suninjuly.github.io/wait1.html")
 
@@ -32,8 +36,8 @@ class Tests(unittest.TestCase):
         button.click()
         message = self.driver.find_element(By.ID, "verify_message")
 #проверка что в переменной присутствует текст, если текст не найден то сообщение
-        self.assertIn("successful", message.text, "не найден текст на странице" )
-        print("test2 successful")
+        self.assertIn("sccessful", message.text, "не найден текст на странице" )
+        print("test2 successful(успешно)")
 
 
 
