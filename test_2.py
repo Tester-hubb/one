@@ -29,6 +29,8 @@ class Tests(unittest.TestCase):
         print("test1 successful")
     # @pytest.mark.smoke - маркировка теста smoke
     @pytest.mark.smoke
+    # skip - маркировка для пропуска теста
+    @pytest.mark.skip
     def test_find_el2(self):
         self.driver.get("http://suninjuly.github.io/wait1.html")
 
